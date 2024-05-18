@@ -1,0 +1,95 @@
+<html>
+	<meta charset="utf-8">
+	<title>Maple Story</title>
+	<style>
+		@font-face {
+			font-family: liwen;
+			src: url("font/FZMWFont.ttf");
+		}
+
+		*{margin: 0;}
+		body{-moz-user-select:none;}
+		#canvas{position: absolute;border: 1px solid #000;cursor: url("bg/cursor.png"), auto;z-index: 1;}
+		
+		.home {position: absolute; border:1px solid #000; width: 800px; height: 600px; cursor: url("bg/cursor.png"), auto;z-index: 2;}
+		.version{position: absolute;right: 100px;top: 5px;font-weight: bold;font-size: 12px;display: none;}
+
+		button {position: absolute; font-size: 18px;font-weight: bold;font-family:liwen, Microsoft Yahei; text-shadow: 0px 0px 5px #444;outline: none;background: transparent;border: none;cursor: url("bg/cursor.png"), auto;display: none;}
+		button:hover{text-shadow: 0px 0px 5px red;}
+		.select-btn{bottom: 150px;right: 100px;}
+		.help-btn{bottom: 120px;right: 100px;}
+
+		.frame{width: 588px;position: absolute; margin-left:100px;font-family: liwen, Microsoft Yahei;background: rgba(0, 0, 0, 0.6);border-radius: 8px;border: 1px solid orange;color:white;padding: 8px;font-size:14px;display: none;}
+		.select-frame{top:50px;}
+		.text{font-weight: bold;font-size: 14px;text-shadow: 0px 0px 5px red;color:yellow;text-align: center;}
+		.character{width: 320px;margin: 10px auto;}
+		img{width: 60px; height: 96;border-radius: 10px;padding: 30px;background:rgba(0, 0, 0, 0.6);box-shadow: 0 0 10px #000;transition: all 0.3s;margin-bottom:20px;}
+		img:hover{box-shadow: 0 0 20px red;background:rgba(0, 0, 0, 0.8);}
+		.left-img{float:left;}
+		.right-img{float: right;}
+
+		.help-frame{bottom: 190px;}
+		.help-frame span {font-weight: bold;font-size: 14px;text-shadow: 0px 0px 5px red;color:yellow;}
+	</style>	
+	<script src="script/resources.js"></script>
+	<script src="script/monster_factory.js"></script>
+	<script src="script/constant.js"></script>
+	<script src="script/util.js"></script>
+	<script src="script/effect.js"></script>
+	<script src="script/attr.js"></script>
+	<script src="script/skill_manager.js"></script>
+	<script src="script/music.js"></script>
+
+	<script src="script/mapdata.js"></script>
+	<script src="script/monster.js"></script>
+	<script src="script/player.js"></script>
+	<script src="script/yingzi.js"></script>
+	<script src="script/map.js"></script>
+	<script src="script/bg.js"></script>
+	<script src="script/scene.js"></script>
+	<script src="script/main.js"></script>
+
+	<body onselectstart="return false;">
+		<audio id="home_audio" src="music/home.mp3" preload="true" loop="true"></audio>
+		<canvas id="canvas" width="800" height="600"></canvas>
+		<div class="home" id="home">
+			<div class="version" id="version">Ver.14052024</div>
+			<!--select character-->
+			<div class="frame select-frame" id="select">
+				<div class="text">escolha o genero</div>
+				<div class="character">
+					<img class="left-img" id="left_img" src="bg/male.png"/>
+					<img class="right-img" id="right_img" src="bg/female.png" onclick="start('female')"/>
+				</div>
+			</div>
+			<!--help-->
+			<div class = "frame help-frame" id="help">
+				<div><span>comandos：</span>Controle de tecla de direção, S para pegar itens, D para pular, F para golpe duplo, G para matar instantaneamente, R para girar e T para cortar; Poção de recuperação de MP Shift。</div>
+				<div><span>dicas：</span>quando pular aperte para cima para subir a corda, aperte para cima para entrar no portal e selecione no inventario a poção a ser usada</div>
+				<div><span>aviso：</span>lembre q isso é uma demo ou seja vai ter bug sim</div>
+				<div><span>contato：</span>Flavioaugusto625@hotmail.com</div>
+			</div>
+
+			<!--menu-->
+			<button class="select-btn" id="start_btn">Iniciar o jogo</button>
+			<button class="help-btn" id="help_btn">ajuda</button>
+
+            <!-- Video -->
+            <video id="video" controls style="display: none;">
+                <source src="/video/An Adventure in Maple World _ MapleStory.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+		</div>
+
+        <script>
+            document.getElementById('start_btn').addEventListener('click', function() {
+                var video = document.getElementById('video');
+                video.style.display = 'block';
+                video.play();
+                video.addEventListener('ended', function() {
+                    video.style.display = 'none';
+                });
+            });
+        </script>
+	</body>
+</html>

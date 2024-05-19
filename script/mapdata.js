@@ -321,11 +321,11 @@ function MapData(next_map) {
 		this.doors.push(this.createDoor(80, 515, "打猎场", window.EAST));
 		this.doors.push(this.createDoor(1370, 515, "石头人寺院II", window.WEST));
 
-		this.addToNormalMonstersStack(0, 645, 1520, 4, "石头人");
+		this.addToNormalMonstersStack(0, 645, 1520, 4, "Golem de pedra");
 		this.addToNormalMonstersStack(0, 645, 1520, 4, "Golem de pedra negro");
-		this.addToNormalMonstersStack(150, 460, 1090, 4, "石头人");
+		this.addToNormalMonstersStack(150, 460, 1090, 4, "Golem de pedra");
 		this.addToNormalMonstersStack(360, 320, 690, 3, "Golem de pedra negro");
-		this.addToNormalMonstersStack(480, 145, 455, 2, "石头人");
+		this.addToNormalMonstersStack(480, 145, 455, 2, "Golem de pedra");
 
 		// map items
 		this.map_items.push(this.createItem(0, 0, 645, 1530, 20));

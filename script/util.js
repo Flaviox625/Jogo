@@ -409,7 +409,7 @@ function Backpack() {
 					ctx.textAlign = "left";
 					ctx.textBaseline = "bottom";
 					ctx.lineWidth = 3;
-					ctx.font = "16px liwen";
+					ctx.font = "16px Arial";
 					ctx.strokeText(this.backpack[this.open][i].amount, this.x + 14 + i % 4 * 36, this.y + 52 + parseInt(i / 4) * 36 + 32, 30, 30);
 					ctx.fillText(this.backpack[this.open][i].amount, this.x + 14 + i % 4 * 36, this.y + 52 + parseInt(i / 4) * 36 + 32, 30, 30);
 					ctx.restore();
@@ -445,14 +445,14 @@ function Backpack() {
 			ctx.roundRect(this.mouse_point.mouse_x, this.mouse_point.mouse_y, 200, 80, 10, true, false);
 			ctx.globalAlpha = 1;
 
-			ctx.font = "14px liwen";
+			ctx.font = "14px Arial";
 			ctx.fillStyle = "white";
 			ctx.textAlign = "center";
 			ctx.textBaseline = "top";
 			ctx.fillText(this.backpack[this.open][this.mouse_point.index].name, this.mouse_point.mouse_x + 100, this.mouse_point.mouse_y + 5);
 			ctx.drawImage(this.backpack[this.open][this.mouse_point.index].img, this.mouse_point.mouse_x + 10, this.mouse_point.mouse_y + 30, 40, 40);
 			
-			ctx.font = "12px liwen";
+			ctx.font = "12px Arial";
 			ctx.textAlign = "left";
 			if (this.open == "Equipar") {
 				for (var i in this.backpack[this.open][this.mouse_point.index].des) {
@@ -481,7 +481,7 @@ function Backpack() {
  			ctx.roundRect(this.select_point.x, this.select_point.y, 50, 80, 10, true, false);
 
  			ctx.globalAlpha = 1;
- 			ctx.font = "12px liwen";
+ 			ctx.font = "12px Arial";
  			ctx.textAlign = "center";
  			ctx.textBaseline = "top";
  			ctx.fillStyle = "white";
@@ -519,7 +519,7 @@ function Backpack() {
 			else fix_y = 0;
 			ctx.drawImage(window.resource.ui["backpack"][this.head[this.open][i]], this.x + 9 + i % 5 * 29, this.y + 26 + fix_y, 28, 20);
 		}
-		ctx.font = "14px liwen";
+		ctx.font = "14px Arial";
 		ctx.fillStyle = "black";
 		ctx.textAlign = "right";
 		ctx.textBaseline = "top";
@@ -963,7 +963,7 @@ function Ability() {
 		ctx.save();
 		ctx.drawImage(window.resource.ui["ability"][0], this.x, this.y);
 
-		ctx.font = "14px liwen";
+		ctx.font = "14px Arial";
 		ctx.textAlign = "left";
 		ctx.textBaseline = "top";
 		ctx.fillStyle = "black";
@@ -1027,7 +1027,7 @@ function Equipment() {
 		ctx.save();
 		ctx.drawImage(window.resource.ui["equipment"][0], this.x, this.y);
 
-		ctx.font = "14px liwen";
+		ctx.font = "14px Arial";
 		ctx.fillStyle = "white";
 		if (this.weapon != null) {
 			ctx.drawImage(this.weapon.img, this.x + 110, this.y + 128, 31, 31);
@@ -1046,14 +1046,14 @@ function Equipment() {
 			ctx.roundRect(this.mouse_point.mouse_x, this.mouse_point.mouse_y, 200, 80, 10, true, false);
 			ctx.globalAlpha = 1;
 
-			ctx.font = "14px liwen";
+			ctx.font = "14px Arial";
 			ctx.fillStyle = "white";
 			ctx.textAlign = "center";
 			ctx.textBaseline = "top";
 			ctx.fillText(this.weapon.name, this.mouse_point.mouse_x + 100, this.mouse_point.mouse_y + 5);
 			ctx.drawImage(this.weapon.img, this.mouse_point.mouse_x + 10, this.mouse_point.mouse_y + 30, 40, 40);
 			
-			ctx.font = "12px liwen";
+			ctx.font = "12px Arial";
 			ctx.textAlign = "left";
 			
 			for (var i in this.weapon.des) {
@@ -1070,14 +1070,14 @@ function Equipment() {
 			ctx.roundRect(this.mouse_point.mouse_x, this.mouse_point.mouse_y, 200, 80, 10, true, false);
 			ctx.globalAlpha = 1;
 
-			ctx.font = "14px liwen";
+			ctx.font = "14px Arial";
 			ctx.fillStyle = "white";
 			ctx.textAlign = "center";
 			ctx.textBaseline = "top";
 			ctx.fillText(this.clothes.name, this.mouse_point.mouse_x + 100, this.mouse_point.mouse_y + 5);
 			ctx.drawImage(this.clothes.img, this.mouse_point.mouse_x + 10, this.mouse_point.mouse_y + 30, 40, 40);
 			
-			ctx.font = "12px liwen";
+			ctx.font = "12px Arial";
 			ctx.textAlign = "left";
 			
 			for (var i in this.clothes.des) {

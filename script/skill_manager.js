@@ -22,25 +22,25 @@ function SkillEffectFactory() {
 
 	this.getSkillEffect = function(player, name) {
 		switch(name) {
-			case "二连击":
+			case "Ataque Duplo":
 				return this.createSkillEffect(player, -50, -20, window.resource.erlianji["effect"], 600, 3, 1, name, 2, 2);
 				break;
-			case "回旋斩":
+			case "Palma Rotatoria":
 				return this.createSkillEffect(player, -50, -10, window.resource.huixuanzhan["effect"], 600, 1, 1, name, 6, 1);
 				break;
-			case "落叶斩0":
+			case "Corte Selvagem 0":
 				return this.createSkillEffect(player, -70, 0, window.resource.luoyezhan["effect"], 650, 0, 0, name);
-			case "落叶斩1":
+			case "Corte Selvagem 1":
 				return this.createSkillEffect(player, -90, 10, window.resource.luoyezhan["effect0"], 150, 0 ,0, name);
-			case "落叶斩2":
+			case "Corte Selvagem 2":
 				return this.createSkillEffect(player, -135, 10, window.resource.luoyezhan["remain"], 500, 6, 2, name, 1, 1);
-			case "影舞瞬杀":
+			case "Dança Da Morte":
 				return this.createSkillEffect(player, -165, -60, window.resource.yingwushunsha["effect"], 800, 7, 1, name, 2, 3);
-			case "影子分身0":
+			case "Clone de sombra 0":
 				 return this.createSkillEffect(player, -160, -70, window.resource.yingzifenshen["effect"], 600, 0, 0, name);
-			case "影子分身1":
+			case "Clone de sombra 1":
 				return this.createSkillEffect(player, -160, -45, window.resource.yingzifenshen["effect0"], 600, 0, 0, name);
-			case "勇士的意志":
+			case "Vontade do Guerreiro":
 				return this.createSkillEffect(player, -153, -287, window.resource.yongshideyizhi["effect"], 800, 0, 0, name);
 		}
 	}
@@ -157,13 +157,13 @@ function SkillHitFactory() {
 
 	this.getSkillHit = function(name, is_right, monster) {
 		switch(name) {
-			case "落叶斩2":
+			case "Corte Selvagem 2":
 				return this.createSkillHit(is_right, monster, 0, window.resource.luoyezhan["hit.0"], 500);
-			case "影舞瞬杀":
+			case "Dança Da Morte":
 				return this.createSkillHit(is_right, monster, 0, window.resource.yingwushunsha["hit.0"], 500);
-			case "二连击":
+			case "Ataque Duplo":
 				return this.createSkillHit(is_right, monster, 0, window.resource.erlianji["hit.0"], 200);
-			case "回旋斩":
+			case "Palma Rotatoria":
 				var random = parseInt(Math.random() * 3);
 				var res;
 				switch(random) {
@@ -397,23 +397,23 @@ function SkillActionFactory() {
 
 	this.getSkillAction = function(player, name) {
 		switch(name) {
-			case "二连击":
+			case "Ataque Duplo":
 				return this.erLianJi(player);
-			case "回旋斩":
+			case "Palma Rotatoria":
 				return this.huiXuanZhan(player);
-			case "影舞瞬杀":
+			case "Dança Da Morte":
 				return this.yingWuShunSha(player);
-			case "勇士的意志":
+			case "Vontade do Guerreiro":
 				return this.yongShiDeYiZhi(player);
-			case "影子分身0":
+			case "Clone de sombra 0":
 				return this.yingZiFenShen0(player);
-			case "影子分身1":
+			case "Clone de sombra 1":
 				return this.yingZiFenShen0(player);
-			case "落叶斩0":
+			case "Corte Selvagem 0":
 				return this.luoYeZhan0(player);
-			case "落叶斩1":
+			case "Corte Selvagem 1":
 				return this.luoYeZhan1(player);
-			case "落叶斩2":
+			case "Corte Selvagem 2":
 				return this.luoYeZhan2(player);
 		}
 	}
@@ -451,7 +451,7 @@ function SkillManager(player, normal_monsters, skill_monsters, map, scene) {
 	this.preSkill = function(name, tips) {
 		this.name = name;
 
-		if (name == "落叶斩1") {
+		if (name == "Corte Selvagem 1") {
 			var rect_luoyezhan;
 			if (this.player.is_right) {
 				rect_luoyezhan = new Rect(this.player.x, this.player.y - this.player.height / 2, 300, 5 * this.player.height / 2);
@@ -478,8 +478,8 @@ function SkillManager(player, normal_monsters, skill_monsters, map, scene) {
 
 		this.player.skill(window.skill_action_factory.getSkillAction(this.player, this.name));
 
-		if (this.name == "落叶斩1") {
-			this.effect.push(window.skill_effect_factory.getSkillEffect(this.player, "落叶斩0"));
+		if (this.name == "Corte Selvagem 1") {
+			this.effect.push(window.skill_effect_factory.getSkillEffect(this.player, "Corte Selvagem 0"));
 			this.player.x = this.xy_luoyezhan.x;
 			this.player.y = this.xy_luoyezhan.y;
 			this.effect.unshift(window.skill_effect_factory.getSkillEffect(this.player, this.name));
@@ -493,7 +493,7 @@ function SkillManager(player, normal_monsters, skill_monsters, map, scene) {
 		this.effect[0].update(this.player.x, this.player.y);
 		this.player.updateSkill(this.effect[0].animation.curr_frame);
 
-		if ((this.name == "落叶斩1" || this.name == "落叶斩2") && this.effect[1]) {
+		if ((this.name == "Corte Selvagem 1" || this.name == "Corte Selvagem 2") && this.effect[1]) {
 			this.effect[1].updateState(scene.ajust_speed_x, scene.ajust_speed_y);
 			if (this.effect[1].getIsFinish()) {
 				this.effect.splice(1, 1);
@@ -502,13 +502,13 @@ function SkillManager(player, normal_monsters, skill_monsters, map, scene) {
 	}
 
 	this.endSkill = function() {
-		if (this.name == "影子分身0") {
-			this.name = "影子分身1";
+		if (this.name == "Clone de sombra 0") {
+			this.name = "Clone de sombra 1";
 			this.effect = [];
 			this.effect.push(window.skill_effect_factory.getSkillEffect(this.player, this.name));
 			this.player.skill(window.skill_action_factory.getSkillAction(this.player, this.name));
-		} else if (this.name == "落叶斩1") {
-			this.name = "落叶斩2";
+		} else if (this.name == "Corte Selvagem 1") {
+			this.name = "Corte Selvagem 2";
 			this.effect[0] = window.skill_effect_factory.getSkillEffect(this.player, this.name);
 			this.player.skill(window.skill_action_factory.getSkillAction(this.player, this.name));
 		} else {
@@ -542,7 +542,7 @@ function SkillManager(player, normal_monsters, skill_monsters, map, scene) {
 			return num_items;
 		}
 
-		if (this.name == "落叶斩2") {
+		if (this.name == "Corte Selvagem 2") {
 			this.effect[0].skill_count++;
 			num_items.push({level: this.effect[0].skill_count, monster: this.luoyezhan_monster});
 		} else if (this.effect[0].skill_count == 0) {

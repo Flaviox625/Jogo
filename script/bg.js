@@ -74,7 +74,7 @@ function UI() {
 		ctx.save();
 		ctx.drawImage(this.res, this.x, this.y);
 		ctx.fillStyle = this.tip.color;
-		ctx.font = "12px liwen";
+		ctx.font = "12px Arial";
 		ctx.textAlign = "left";
 		ctx.textBaseline = "top";
 		ctx.fillText(this.tip.tip, 10, window.HEIGHT - 54);
@@ -102,11 +102,11 @@ function UI() {
 		ctx.fillStyle = "yellow";
 		ctx.textAlign = "left";
 		ctx.textBaseline = "top";
-		ctx.font = "24px liwen";
+		ctx.font = "24px Arial";
 		ctx.fillText(window.player_attr.level, 35, window.HEIGHT - 31);
 
 		ctx.fillStyle = "white";
-		ctx.font = "14px liwen";
+		ctx.font = "14px Arial";
 		ctx.textAlign = "right";
 		ctx.fillText("[" + window.player_attr.curr_hp + "/" + window.player_attr.max_hp + "]", 390, window.HEIGHT - 33);
 		ctx.fillText("[" + window.player_attr.curr_mp + "/" + window.player_attr.max_mp + "]", 560, window.HEIGHT - 33);

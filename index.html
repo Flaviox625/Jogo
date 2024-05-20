@@ -2,24 +2,21 @@
 	<meta charset="utf-8">
 	<title>Maple Story</title>
 	<style>
-		@font-face {
-			font-family: liwen;
-			src: url("font/FZMWFont.ttf");
-		}
+		@import url('https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap');
 
 		*{margin: 0;}
-		body{-moz-user-select:none;}
+		body{user-select:none;}
 		#canvas{position: absolute;border: 1px solid #000;cursor: url("bg/cursor.png"), auto;z-index: 1;}
 		
 		.home {position: absolute; border:1px solid #000; width: 800px; height: 600px; cursor: url("bg/cursor.png"), auto;z-index: 2;}
 		.version{position: absolute;right: 100px;top: 5px;font-weight: bold;font-size: 12px;display: none;}
 
-		button {position: absolute; font-size: 18px;font-weight: bold;font-family:liwen, Microsoft Yahei; text-shadow: 0px 0px 5px #444;outline: none;background: transparent;border: none;cursor: url("bg/cursor.png"), auto;display: none;}
+		button {position: absolute; font-size: 18px;font-weight: bold;font-family:Arial, sans-serif; text-shadow: 0px 0px 5px #444;outline: none;background: transparent;border: none;cursor: url("bg/cursor.png"), auto;display: none;}
 		button:hover{text-shadow: 0px 0px 5px red;}
 		.select-btn{bottom: 150px;right: 100px;}
 		.help-btn{bottom: 120px;right: 100px;}
 
-		.frame{width: 588px;position: absolute; margin-left:100px;font-family: liwen, Microsoft Yahei;background: rgba(0, 0, 0, 0.6);border-radius: 8px;border: 1px solid orange;color:white;padding: 8px;font-size:14px;display: none;}
+		.frame{width: 588px;position: absolute; margin-left:100px;font-family:Arial, sans-serif;background: rgba(0, 0, 0, 0.6);border-radius: 8px;border: 1px solid orange;color:white;padding: 8px;font-size:14px;display: none;}
 		.select-frame{top:50px;}
 		.text{font-weight: bold;font-size: 14px;text-shadow: 0px 0px 5px red;color:yellow;text-align: center;}
 		.character{width: 320px;margin: 10px auto;}
@@ -56,7 +53,7 @@
 			<div class="version" id="version">Ver.14052024</div>
 			<!--select character-->
 			<div class="frame select-frame" id="select">
-				<div class="text">escolha o genero</div>
+				<div class="text">Escolha o Genero</div>
 				<div class="character">
 					<img class="left-img" id="left_img" src="bg/male.png"/>
 					<img class="right-img" id="right_img" src="bg/female.png" onclick="start('female')"/>
@@ -64,15 +61,15 @@
 			</div>
 			<!--help-->
 			<div class = "frame help-frame" id="help">
-				<div><span>comandos：</span>Controle de tecla de direção, S para pegar itens, D para pular, F para golpe duplo, G para matar instantaneamente, R para girar e T para cortar; Poção de recuperação de MP Shift。</div>
-				<div><span>dicas：</span>quando pular aperte para cima para subir a corda, aperte para cima para entrar no portal e selecione no inventario a poção a ser usada</div>
-				<div><span>aviso：</span>lembre q isso é uma demo ou seja vai ter bug sim</div>
-				<div><span>contato：</span>Flavioaugusto625@hotmail.com</div>
+				<div><span>Comandos：</span>Controle de tecla de direção, Z para pegar itens, Espaço para pular, Q,W para buffs R,T,F,G para skill, A,D para usar as poções, I inventario, E equipamentos e S status。</div>
+				<div><span>Dicas：</span>quando pular aperte para cima para subir a corda, aperte para cima para entrar no portal e selecione no inventario a poção a ser usada</div>
+				<div><span>Aviso：</span>lembre que isso é uma demo ou seja vai ter bug sim</div>
+				<div><span>Contato：</span>Flavioaugusto625@hotmail.com</div>
 			</div>
 
 			<!--menu-->
 			<button class="select-btn" id="start_btn">Iniciar o jogo</button>
-			<button class="help-btn" id="help_btn">ajuda</button>
+			<button class="help-btn" id="help_btn">Ajuda</button>
 
             <!-- Video -->
             <video id="video" controls style="display: none;">

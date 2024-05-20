@@ -714,7 +714,7 @@ function Tip(text, type) {
 				break;
 		}
 		ctx.fillStyle = text_color;
-		ctx.font = "12px liwen";
+		ctx.font = "12px Arial";
 		ctx.textAlign = "right";
 		ctx.fillText(this.text, this.x, this.y);
 		ctx.restore();

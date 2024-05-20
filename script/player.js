@@ -199,7 +199,7 @@ function Player(data) {
 	this.updateX = function(ajust_speed_x) {
 		this.x += ajust_speed_x;
 
-		// 移动
+		// mover
 		if (this.is_walk && !this.is_stop) {
 			if (this.is_right && this.x < window.WIDTH - this.width) {
 				this.x += this.walk_speed;
@@ -212,7 +212,7 @@ function Player(data) {
 	this.updateY = function(ajust_speed_y) {
 		this.y += ajust_speed_y;
 
-		// 爬绳子
+		// escalar corda
 		if (this.is_rope) {
 			if (this.is_up) {
 				this.y -= this.rope_speed;
@@ -221,12 +221,12 @@ function Player(data) {
 			}
 		}
 
-		//  落下
+		//  cair
 		if (this.is_fall) {
 			this.y += this.jump_speed;
 		}
 
-		// 跳跃
+		// pular
 		if (this.is_jump) {
 			this.jump_curr_height += this.jump_speed;
 			this.y -= this.jump_speed;

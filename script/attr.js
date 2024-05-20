@@ -75,16 +75,16 @@ function SkillsAttr() {
 
 	this.getSkillsAttr = function() {
 		var skills = [];
-			skills["二连击"] = this.erLianJi;
-			skills["落叶斩0"] = this.luoYeZhan0;
-			skills["落叶斩1"] = this.luoYeZhan1;
-			skills["落叶斩2"] = this.luoYeZhan2;
-			skills["回旋斩"] = this.huiXuanZhan;
-			skills["影舞瞬杀"] = this.yingWuShunSha;
+			skills["Ataque Duplo"] = this.erLianJi;
+			skills["Corte Selvagem 0"] = this.luoYeZhan0;
+			skills["Corte Selvagem 1"] = this.luoYeZhan1;
+			skills["Corte Selvagem 2"] = this.luoYeZhan2;
+			skills["Palma Rotatoria"] = this.huiXuanZhan;
+			skills["Dança Da Morte"] = this.yingWuShunSha;
 
-			skills["影子分身0"] = this.yingZiFenShen0;
-			skills["影子分身1"] = this.yingZiFenShen1;
-			skills["勇士的意志"] = this.yongShiDeYiZhi;
+			skills["Clone de sombra 0"] = this.yingZiFenShen0;
+			skills["Clone de sombra 1"] = this.yingZiFenShen1;
+			skills["Vontade do Guerreiro"] = this.yongShiDeYiZhi;
 		return skills;
 	}
 }
@@ -148,7 +148,7 @@ function PlayerAttr() {
 	this.basic_power_hit = 0.2;
 	this.basic_defense = 1;
 	this.basic_magic_defense = 1;
-	this.work = "飞侠";
+	this.work = "-";
 
 	this.physic_hit = "-";
 	this.magic_hit = "-";

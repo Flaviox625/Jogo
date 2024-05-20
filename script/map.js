@@ -60,7 +60,7 @@ function Map(data) {
 		}
 	}
 
-	// 检测玩家与地图碰撞
+	// Detectar colisão jogador-mapa
 	this.checkCollision = function(rect, is_down, is_fall) {
 		var result = {is_floor: false, foor_item: null, is_rope: false, rope_item: null, is_stop: false, stop_item: null, is_ladder: false, ladder_item: null};
 		for (var i in this.map_items) {
@@ -76,7 +76,7 @@ function Map(data) {
 						result.rope_item = item;
 						if (is_down)
 							result.is_floor = false;
-					 	break;
+						break;
 					case 2:
 						result.is_ladder = true;
 						result.ladder_item = item;

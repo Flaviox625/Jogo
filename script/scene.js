@@ -92,37 +92,45 @@ function GameScene(scene_obj, ctx) {
 				break;
 			case 71: // Tecla "G"
 				if (!this.player.is_skill && !this.player.is_rope) {
-					this.skill_manager.preSkill("二连击", this.tips);
+					this.skill_manager.preSkill("Ataque Duplo", this.tips);
 				}
 				break;
 			case 81: // Tecla "Q"
 				if (!this.player.is_skill && !this.player.is_rope) {
-					this.skill_manager.preSkill("勇士的意志", this.tips);
+					this.skill_manager.preSkill("Vontade do Guerreiro", this.tips);
 				} 
 				break;
 			case 87: // Tecla "W"
 				if (!this.player.is_skill && !this.player.is_rope) {
-					this.skill_manager.preSkill("影子分身0", this.tips);
+					this.skill_manager.preSkill("Clone de sombra 0", this.tips);
 				}
 				break;
 			case 70: // Tecla "F"
 				if (!this.player.is_skill && !this.player.is_rope) {
-					this.skill_manager.preSkill("影舞瞬杀", this.tips);
+					this.skill_manager.preSkill("Dança Da Morte", this.tips);
 				}
 				break;
 			case 82: // Tecla "R"
 				if (!this.player.is_skill && !this.player.is_rope) {
-					this.skill_manager.preSkill("回旋斩", this.tips);
+					this.skill_manager.preSkill("Palma Rotatoria", this.tips);
 				} 
 				break;
 			case 84: // Tecla "T"
 				if (!this.player.is_skill && !this.player.is_rope ) {
-					this.skill_manager.preSkill("落叶斩1", this.tips);
+					this.skill_manager.preSkill("Corte Selvagem 1", this.tips);
 				} 
 				break;
 			case 90: // Tecla "Z"
 				if (this.player.is_skill) return;
 				this.player.is_thing = true; // Define que o jogador está interagindo com um item
+				break;
+			case 65: // Tecla "A"
+				if (this.player.is_skill) return;
+				this.backpack.addMp(); // Adiciona mana (ou outra ação relacionada à poção)
+				break;
+			case 68: // Tecla "D"
+				if (this.player.is_skill) return;
+				this.backpack.addHp(); // Adiciona vida (ou outra ação relacionada à poção)
 				break;
 			
 		}

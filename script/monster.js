@@ -172,7 +172,7 @@ function NormalMonster(data) {
 		if (this.is_draw_info) {
 			ctx.save();
 			ctx.fillStyle = "yellow";
-			ctx.font = "12px liwen";
+			ctx.font = "12px Arial";
 			ctx.textAlign = "center";
 			ctx.textBaseline = "top"
 			ctx.fillText(this.name, this.x + this.curr_res.width / 2, this.y + this.curr_res.height + 3);
@@ -406,7 +406,7 @@ function SkillAttackMonster(data) {
 		if (this.is_draw_info) {
 			ctx.save();
 			ctx.fillStyle = "yellow";
-			ctx.font = "12px liwen";
+			ctx.font = "12px Arial";
 			ctx.textAlign = "center";
 			ctx.textBaseline = "top"
 			ctx.fillText(this.name, this.x + this.curr_res.width / 2, this.y + this.curr_res.height + 3);

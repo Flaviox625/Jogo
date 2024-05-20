@@ -88,13 +88,13 @@ function MonsterFactory() {
 		var stand_animation = new Animation(res["stand"], stand_delay);
 
 		var attack_animation = new Animation(res["attack1"], attack_delay, flag_frame);
-		var data =  {ax: ax, ay: ay, awidth: awidth, // 活动范围
-				x: x, y: y, width: width, height: height, // 位置属性
-				is_right: is_right, is_move: is_move, count: count, // 怪物状态属性
+		var data =  {ax: ax, ay: ay, awidth: awidth, // Escopo de atividades
+				x: x, y: y, width: width, height: height, // atributo de localização
+				is_right: is_right, is_move: is_move, count: count, // Atributo de status de monstro
 				name: name,
 				attack_rect: new Rect(x + width / 2, y + height / 2 - attack_height / 2, attack_width, attack_height / 2 + height / 2),
 				hit_animation: hit_animation, die_animation: die_animation, move_animation: move_animation, stand_animation: stand_animation,
-				attack_animation: attack_animation// 动画
+				attack_animation: attack_animation// animação
 			};
 		return data;
 	}
@@ -103,34 +103,34 @@ function MonsterFactory() {
 		switch(data.name) {
 			case "Pixil estelar":
 				return new SkillAttackMonster(this.createSkillAttackMonsterData(data.ax, data.ay, data.awidth, window.resource.xingguangjingling, data.name,
-										 500, 
-										 900, 
-										 900, 
-										 900, 
-										 1500, 6,
-										 1000, 
-										 400, 
-										 200, 200));
+										500, 
+										900, 
+										900, 
+										900, 
+										1500, 6,
+										1000, 
+										400, 
+										200, 200));
 			case "Pixil lunar":
 				return new SkillAttackMonster(this.createSkillAttackMonsterData(data.ax, data.ay, data.awidth, window.resource.yueguangjingling, data.name,
-										 500, 
-										 900, 
-										 900, 
-										 900, 
-										 1500, 6,
-										 1000, 
-										 400, 
-										 250, 200));
+										500, 
+										900, 
+										900, 
+										900, 
+										1500, 6,
+										1000, 
+										400, 
+										250, 200));
 			case "Pixil solar":
 				return new SkillAttackMonster(this.createSkillAttackMonsterData(data.ax, data.ay, data.awidth, window.resource.riguangjingling, data.name,
-										 500, 
-										 900, 
-										 900, 
-										 900, 
-										 1500, 6,
-										 1000, 
-										 400, 
-										 250, 200));
+										500, 
+										900, 
+										900, 
+										900, 
+										1500, 6,
+										1000, 
+										400, 
+										250, 200));
 		}
 	}
 }

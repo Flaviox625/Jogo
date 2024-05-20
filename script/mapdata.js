@@ -72,7 +72,7 @@ function MapData(next_map) {
 		this.player_x = 350;
 		this.player_y = 355;
 
-		this.doors.push(this.createDoor(650, 745, "哼唱小道", window.WEST));
+		this.doors.push(this.createDoor(650, 745, "Floresta do som", window.WEST));
 
 		this.map_items.push(this.createItem(0, 290, 875, 500, 20));
 		this.map_items.push(this.createItem(3, 270, 200, 20, 800, false));
@@ -106,7 +106,7 @@ function MapData(next_map) {
 		this.down_fix = -100;
 
 		// doors
-		this.doors.push(this.createDoor(820, 270, "三岔路", window.WEST));
+		this.doors.push(this.createDoor(820, 270, "Estrada Sancha", window.WEST));
 
 		// monsters_stack
 		this.addToNormalMonstersStack(0, 405, 1080, 3, "Caracol azul");
@@ -145,9 +145,9 @@ function MapData(next_map) {
 		this.right_fix = 10;
 		this.down_fix = 100;
 
-		this.doors.push(this.createDoor(30, 870, "哼唱小道", window.EAST));
-		this.doors.push(this.createDoor(1550, 870, "散步路", window.WEST));
-		this.doors.push(this.createDoor(200, 300, "精灵森林", window.EAST));
+		this.doors.push(this.createDoor(30, 870, "Floresta do som", window.EAST));
+		this.doors.push(this.createDoor(1550, 870, "Bosque", window.WEST));
+		this.doors.push(this.createDoor(200, 300, "Floresta dos Elfos", window.EAST));
 
 		// monsters_stack
 		this.addToNormalMonstersStack(650, 375, 320, 2, "Cogumelo espinhoso");
@@ -201,8 +201,8 @@ function MapData(next_map) {
 		this.down_fix = -100;
 
 		// doors
-		this.doors.push(this.createDoor(50, 260, "三岔路", window.EAST));
-		this.doors.push(this.createDoor(1200, 260, "打猎场", window.NORTH));
+		this.doors.push(this.createDoor(50, 260, "Estrada Sancha", window.EAST));
+		this.doors.push(this.createDoor(1200, 260, "área de caça", window.NORTH));
 
 		// monsters_stack
 		this.addToNormalMonstersStack(0, 395, 1400, 5, "Borboleta");
@@ -239,8 +239,8 @@ function MapData(next_map) {
 		this.down_fix = 0;
 
 		// doors
-		this.doors.push(this.createDoor(650, 80, "散步路", window.EAST));
-		this.doors.push(this.createDoor(1420, 660, "石头人寺院I", window.WEST));
+		this.doors.push(this.createDoor(650, 80, "Bosque", window.EAST));
+		this.doors.push(this.createDoor(1420, 660, "Templo do Homem de Pedra I", window.WEST));
 
 		this.addToNormalMonstersStack(345, 450, 750, 4, "Cogumelo laranja");
 		this.addToNormalMonstersStack(345, 690, 750, 6, "Mini Snake");
@@ -317,9 +317,9 @@ function MapData(next_map) {
 		this.up_fix = 80;
 		this.down_fix = 0;
 
-		// doors
-		this.doors.push(this.createDoor(80, 515, "打猎场", window.EAST));
-		this.doors.push(this.createDoor(1370, 515, "石头人寺院II", window.WEST));
+		// portais
+		this.doors.push(this.createDoor(80, 515, "área de caça", window.EAST));
+		this.doors.push(this.createDoor(1370, 515, "Templo do Homem de Pedra II", window.WEST));
 
 		this.addToNormalMonstersStack(0, 645, 1520, 4, "Golem de pedra");
 		this.addToNormalMonstersStack(0, 645, 1520, 4, "Golem de pedra negro");
@@ -370,8 +370,8 @@ function MapData(next_map) {
 		this.down_fix = 0;
 
 		// doors
-		this.doors.push(this.createDoor(250, 440, "石头人寺院I", window.EAST));
-		this.doors.push(this.createDoor(980, 150, "小黑屋", window.WEST));
+		this.doors.push(this.createDoor(250, 440, "Templo do Homem de Pedra I", window.EAST));
+		this.doors.push(this.createDoor(980, 150, "pequeno quarto escuro", window.WEST));
 
 		this.addToNormalMonstersStack(0, 820, 1890, 7, "Golem de aço");
 		this.addToNormalMonstersStack(0, 820, 1890, 3, "Golem de pedra negro");
@@ -414,7 +414,7 @@ function MapData(next_map) {
 		this.res = window.resource.map["m"][7];
 
 		// doors
-		this.doors.push(this.createDoor(40, 270, "石头人寺院II", window.NORTH));
+		this.doors.push(this.createDoor(40, 270, "Templo do Homem de Pedra II", window.NORTH));
 
 		this.map_items.push(this.createItem(0, 0, 453, 1890, 20));
 		this.map_items.push(this.createItem(0, 0, 405, 250, 20));
@@ -477,31 +477,31 @@ function MapData(next_map) {
 	}
 
 	switch(this.position) {
-		case "红枫树":
+		case "árvore de bordo vermelho":
 			this.hongFengShu();
 			break;
-		case "哼唱小道":
+		case "Floresta do som":
 			this.hengChangXiaoDao();
 			break;
-		case "三岔路":
+		case "Estrada Sancha":
 			this.sanChaLu();
 			break;
-		case "散步路":
+		case "Bosque":
 			this.sanBuLu();
 			break;
-		case "打猎场":
+		case "área de caça":
 			this.daLieChang();
 			break;
-		case "石头人寺院I":
+		case "Templo do Homem de Pedra I":
 			this.shiTouRenShiYuanI();
 			break;
-		case "石头人寺院II":
+		case "Templo do Homem de Pedra II":
 			this.shiTouRenShiYuanII();
 			break;
-		case "小黑屋":
+		case "pequeno quarto escuro":
 			this.xiaoHeiWu();
 			break;
-		case "精灵森林":
+		case "Floresta dos Elfos":
 			this.jingLingSenLin();
 			break;
 	}

@@ -48,7 +48,7 @@ window.onload = function() {
 	var ctx = canvas.getContext("2d");
 		ctx.textAlign = "center";
 		ctx.textBaseLine = "top";
-		ctx.font = "14px Microsoft Yahei bold";
+		ctx.font = "14px Arial";
 		ctx.fillStyle = "black";
 
 	this.thread = setInterval(function() {
@@ -123,7 +123,7 @@ window.start = function(gender) {
             this.fill();  
         }  
 };  
-  
+
 
 	var player;
 	var backpack;
@@ -133,7 +133,7 @@ window.start = function(gender) {
 	
 	initSingle();
 
-	var game_scene = new GameScene(getGameData({position: "红枫树", orientation: window.EAST}), ctx);
+	var game_scene = new GameScene(getGameData({position: "árvore de bordo vermelho", orientation: window.EAST}), ctx);
 	this.onkeyup = function(event) { game_scene.keyUpEvent(event);}
 	this.onkeydown = function(event) { game_scene.keyDownEvent(event); }
 	this.onmousemove = function(event) {game_scene.mouseMoveEvent(event);}
@@ -180,13 +180,13 @@ window.start = function(gender) {
 		ui = new UI();
 
 		var player_data = {x: 0, y: 0, width: window.resource.player["stand1"][0].width, height: window.resource.player["stand1"][0].height, 
-						   rect_height: 10, is_right: true, curr_res: window.resource.player["stand1"][0],
-						   jump_max_height: 120, walk_speed: 8, rope_speed: 8, jump_speed: 15,
-						   stand_animation: new Animation(window.resource.player["stand1"], 800),
-						   walk_animation: new Animation(window.resource.player["walk1"], 800),
-						   jump_animation: new Animation(window.resource.player["jump"], 800),
-						   rope_animation: new Animation(window.resource.player["rope"], 500),
-						   ladder_animation: new Animation(window.resource.player["ladder"], 500)};
+						rect_height: 10, is_right: true, curr_res: window.resource.player["stand1"][0],
+						jump_max_height: 120, walk_speed: 8, rope_speed: 8, jump_speed: 15,
+						stand_animation: new Animation(window.resource.player["stand1"], 800),
+						walk_animation: new Animation(window.resource.player["walk1"], 800),
+						jump_animation: new Animation(window.resource.player["jump"], 800),
+						rope_animation: new Animation(window.resource.player["rope"], 500),
+						ladder_animation: new Animation(window.resource.player["ladder"], 500)};
 			player_data.defense = 0;
 			player_data.min_attack = 1;
 			player_data.max_attack = 500;

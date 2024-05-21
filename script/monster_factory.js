@@ -14,11 +14,11 @@ function MonsterFactory() {
 		var die_animation = new Animation(res["die1"], die_delay, 0);
 		var move_animation = new Animation(res["move"], move_delay);
 		var stand_animation = new Animation(res["stand"], stand_delay);
-		return {ax: ax, ay: ay, awidth: awidth, // 活动范围
-				x: x, y: y, width: width, height: height, // 位置属性
-				is_right: is_right, is_move: is_move, count: count, // 怪物状态属性
+		return {ax: ax, ay: ay, awidth: awidth, // Escopo de atividades
+				x: x, y: y, width: width, height: height, // atributo de localização
+				is_right: is_right, is_move: is_move, count: count, // Atributo de status de monstro
 				name: name,
-				hit_animation: hit_animation, die_animation: die_animation, move_animation: move_animation, stand_animation: stand_animation // 动画
+				hit_animation: hit_animation, die_animation: die_animation, move_animation: move_animation, stand_animation: stand_animation // animação
 			};
 	}
 

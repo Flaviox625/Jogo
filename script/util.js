@@ -917,7 +917,7 @@ function PropertiesFactory() {
 			case "Navalha":
 				return {attack: 10 + parseInt(Math.random() * 6), defense: parseInt(Math.random() * 6), magic_defense: parseInt(Math.random() * 6), power_hit: 0}
 			case "Lâmina da Fênix":
-				return {attack: 72 + parseInt(Math.random() * 6), defense: 30 + parseInt(Math.random() * 6), magic_defense: 40 + parseInt(Math.random() * 6), power_hit: 0}
+				return {attack: 92 + parseInt(Math.random() * 6), defense: 30 + parseInt(Math.random() * 6), magic_defense: 40 + parseInt(Math.random() * 6), power_hit: 0}
 			case "lamina maple":
 				return {attack: 34 + parseInt(Math.random() * 6), defense: 10 + parseInt(Math.random() * 6), magic_defense: 15 + parseInt(Math.random() * 6), power_hit: 0}
 			case "lâmina de asa dupla":
@@ -925,7 +925,7 @@ function PropertiesFactory() {
 			case "casaco de couro":
 				return {attack: parseInt(Math.random() * 6), defense: 45 + parseInt(Math.random() * 6), magic_defense: 30 + parseInt(Math.random() * 6), power_hit: 0}
 			case "camisa preta":
-				return {attack: parseInt(Math.random() * 6), defense: 120 + parseInt(Math.random() * 11), magic_defense: 120 + parseInt(Math.random() * 11), power_hit: 0}
+				return {attack: parseInt(Math.random() * 16), defense: 120 + parseInt(Math.random() * 11), magic_defense: 120 + parseInt(Math.random() * 11), power_hit: 0}
 		}
 	}
 }

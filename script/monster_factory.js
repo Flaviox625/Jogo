@@ -26,7 +26,7 @@ function MonsterFactory() {
 		switch(data.name) {
 			case "Caracol azul":
 				return new NormalMonster(this.createNormalMonsterData(data.ax, data.ay, data.awidth, window.resource.lanwoniu, data.name,
-										 500, 900, 900, 900));
+										500, 900, 900, 900));
 			case "Mini cogu":
 				return new NormalMonster(this.createNormalMonsterData(data.ax, data.ay, data.awidth, window.resource.moguzai, data.name, 
 										500, 600, 600, 600));

@@ -233,9 +233,9 @@ function MonstersAttr() {
 		speed: 2,
 		min_magic_attack: 0,
 		max_magic_attack: 0,
-		min_attack: 1750,
-		max_attack: 2350,
-		defense: 3333,
+		min_attack: 250,
+		max_attack: 550,
+		defense: 333,
 		max_hp: 9999,
 		exp: 1000,
 		things: []
@@ -387,7 +387,7 @@ function MonstersAttr() {
 		max_magic_attack: 0,
 		min_attack: 210,
 		max_attack: 260,
-		defense: 1200,
+		defense: 200,
 		max_hp: 4500,
 		exp: 250,
 		things: []

@@ -1,92 +1,127 @@
-<html>
-	<meta charset="utf-8">
-	<title>Maple Story</title>
-	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap');
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Maple Story</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap');
 
-		*{margin: 0;}
-		body{user-select:none;}
-		#canvas{position: absolute;border: 1px solid #000;cursor: url("bg/cursor.png"), auto;z-index: 1;}
-		
-		.home {position: absolute; border:1px solid #000; width: 800px; height: 600px; cursor: url("bg/cursor.png"), auto;z-index: 2;}
-		.version{position: absolute;right: 100px;top: 5px;font-weight: bold;font-size: 12px;display: none;}
+        * { margin: 0; }
+        body { user-select: none; }
+        #canvas { position: absolute; border: 1px solid #000; cursor: url("bg/cursor.png"), auto; z-index: 1; }
+        
+        .home { position: absolute; border: 1px solid #000; width: 800px; height: 600px; cursor: url("bg/cursor.png"), auto; z-index: 2; }
+        .version { position: absolute; right: 100px; top: 5px; font-weight: bold; font-size: 12px; display: none; }
 
-		button {position: absolute; font-size: 18px;font-weight: bold;font-family:Arial, sans-serif; text-shadow: 0px 0px 5px #444;outline: none;background: transparent;border: none;cursor: url("bg/cursor.png"), auto;display: none;}
-		button:hover{text-shadow: 0px 0px 5px red;}
-		.select-btn{bottom: 150px;right: 100px;}
-		.help-btn{bottom: 120px;right: 100px;}
+        button { position: absolute; font-size: 18px; font-weight: bold; font-family: Arial, sans-serif; text-shadow: 0px 0px 5px #444; outline: none; background: transparent; border: none; cursor: url("bg/cursor.png"), auto; display: none; }
+        button:hover { text-shadow: 0px 0px 5px red; }
+        .select-btn { bottom: 150px; right: 100px; }
+        .help-btn { bottom: 120px; right: 100px; }
 
-		.frame{width: 588px;position: absolute; margin-left:100px;font-family:Arial, sans-serif;background: rgba(0, 0, 0, 0.6);border-radius: 8px;border: 1px solid orange;color:white;padding: 8px;font-size:14px;display: none;}
-		.select-frame{top:50px;}
-		.text{font-weight: bold;font-size: 14px;text-shadow: 0px 0px 5px red;color:yellow;text-align: center;}
-		.character{width: 320px;margin: 10px auto;}
-		img{width: 60px; height: 96;border-radius: 10px;padding: 30px;background:rgba(0, 0, 0, 0.6);box-shadow: 0 0 10px #000;transition: all 0.3s;margin-bottom:20px;}
-		img:hover{box-shadow: 0 0 20px red;background:rgba(0, 0, 0, 0.8);}
-		.left-img{float:left;}
-		.right-img{float: right;}
+        .frame { width: 588px; position: absolute; margin-left: 100px; font-family: Arial, sans-serif; background: rgba(0, 0, 0, 0.6); border-radius: 8px; border: 1px solid orange; color: white; padding: 8px; font-size: 14px; display: none; }
+        .select-frame { top: 50px; }
+        .text { font-weight: bold; font-size: 14px; text-shadow: 0px 0px 5px red; color: yellow; text-align: center; }
+        .character { width: 320px; margin: 10px auto; }
+        img { width: 60px; height: 96; border-radius: 10px; padding: 30px; background: rgba(0, 0, 0, 0.6); box-shadow: 0 0 10px #000; transition: all 0.3s; margin-bottom: 20px; }
+        img:hover { box-shadow: 0 0 20px red; background: rgba(0, 0, 0, 0.8); }
+        .left-img { float: left; }
+        .right-img { float: right; }
 
-		.help-frame{bottom: 190px;}
-		.help-frame span {font-weight: bold;font-size: 14px;text-shadow: 0px 0px 5px red;color:yellow;}
-	</style>	
-	<script src="script/resources.js"></script>
-	<script src="script/monster_factory.js"></script>
-	<script src="script/constant.js"></script>
-	<script src="script/util.js"></script>
-	<script src="script/effect.js"></script>
-	<script src="script/attr.js"></script>
-	<script src="script/skill_manager.js"></script>
-	<script src="script/music.js"></script>
+        .help-frame { bottom: 190px; }
+        .help-frame span { font-weight: bold; font-size: 14px; text-shadow: 0px 0px 5px red; color: yellow; }
+    </style>    
+    <script src="script/resources.js"></script>
+    <script src="script/monster_factory.js"></script>
+    <script src="script/constant.js"></script>
+    <script src="script/util.js"></script>
+    <script src="script/effect.js"></script>
+    <script src="script/attr.js"></script>
+    <script src="script/skill_manager.js"></script>
+    <script src="script/music.js"></script>
 
-	<script src="script/mapdata.js"></script>
-	<script src="script/monster.js"></script>
-	<script src="script/player.js"></script>
-	<script src="script/yingzi.js"></script>
-	<script src="script/map.js"></script>
-	<script src="script/bg.js"></script>
-	<script src="script/scene.js"></script>
-	<script src="script/main.js"></script>
+    <script src="script/mapdata.js"></script>
+    <script src="script/monster.js"></script>
+    <script src="script/player.js"></script>
+    <script src="script/yingzi.js"></script>
+    <script src="script/map.js"></script>
+    <script src="script/bg.js"></script>
+    <script src="script/scene.js"></script>
+    <script src="script/main.js"></script>
+</head>
+<body onselectstart="return false;">
+    <audio id="home_audio" src="music/home.mp3" preload="true" loop="true"></audio>
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <div class="home" id="home">
+        <div class="version" id="version">Ver.14052024</div>
+        <!--select character-->
+        <div class="frame select-frame" id="select">
+            <div class="text">Escolha o Genero</div>
+            <div class="character">
+                <img class="left-img" id="left_img" src="bg/male.png"/>
+                <img class="right-img" id="right_img" src="bg/female.png" onclick="start('female')"/>
+            </div>
+        </div>
+        <!--help-->
+        <div class="frame help-frame" id="help">
+            <div><span>Comandos：</span>Controle de tecla de direção, Z para pegar itens, Espaço para pular, Q,W para buffs R,T,F,G para skill, A,D para usar as poções, I inventario, E equipamentos e S status。</div>
+            <div><span>Dicas：</span>quando pular aperte para cima para subir a corda, aperte para cima para entrar no portal e selecione no inventario a poção a ser usada</div>
+            <div><span>Aviso：</span>lembre que isso é uma demo ou seja vai ter bug sim</div>
+            <div><span>Contato：</span>Flavioaugusto625@hotmail.com</div>
+        </div>
 
-	<body onselectstart="return false;">
-		<audio id="home_audio" src="music/home.mp3" preload="true" loop="true"></audio>
-		<canvas id="canvas" width="800" height="600"></canvas>
-		<div class="home" id="home">
-			<div class="version" id="version">Ver.14052024</div>
-			<!--select character-->
-			<div class="frame select-frame" id="select">
-				<div class="text">Escolha o Genero</div>
-				<div class="character">
-					<img class="left-img" id="left_img" src="bg/male.png"/>
-					<img class="right-img" id="right_img" src="bg/female.png" onclick="start('female')"/>
-				</div>
-			</div>
-			<!--help-->
-			<div class = "frame help-frame" id="help">
-				<div><span>Comandos：</span>Controle de tecla de direção, Z para pegar itens, Espaço para pular, Q,W para buffs R,T,F,G para skill, A,D para usar as poções, I inventario, E equipamentos e S status。</div>
-				<div><span>Dicas：</span>quando pular aperte para cima para subir a corda, aperte para cima para entrar no portal e selecione no inventario a poção a ser usada</div>
-				<div><span>Aviso：</span>lembre que isso é uma demo ou seja vai ter bug sim</div>
-				<div><span>Contato：</span>Flavioaugusto625@hotmail.com</div>
-			</div>
+        <!--menu-->
+        <button class="select-btn" id="start_btn">Iniciar o jogo</button>
+        <button class="help-btn" id="help_btn">Ajuda</button>
 
-			<!--menu-->
-			<button class="select-btn" id="start_btn">Iniciar o jogo</button>
-			<button class="help-btn" id="help_btn">Ajuda</button>
-
-            <!-- Video -->
-            <video id="video" controls style="display: none;">
+        <!-- Video for Starting the Game -->
+        <div id="video-container-start" style="display: none; position: absolute; top: 0; left: 0; width: 800px; height: 600px; background: rgba(0,0,0,0.8); z-index: 3; align-items: center; justify-content: center;">
+            <video id="video-start" controls style="max-width: 100%; max-height: 100%;">
                 <source src="/video/An Adventure in Maple World _ MapleStory.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-		</div>
+        </div>
 
-        <script>
-            document.getElementById('start_btn').addEventListener('click', function() {
-                var video = document.getElementById('video');
-                video.style.display = 'block';
-                video.play();
-                video.addEventListener('ended', function() {
-                    video.style.display = 'none';
-                });
+        <!-- Video for Help -->
+        <div id="video-container-help" style="display: none; position: absolute; top: 0; left: 0; width: 800px; height: 600px; background: rgba(0,0,0,0.8); z-index: 3; align-items: center; justify-content: center;">
+            <video id="video-help" controls style="max-width: 100%; max-height: 100%;">
+                <source src="/video/video intro.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <script>
+        // Função para ajustar o volume da música
+        function adjustMusicVolume(volume) {
+            var homeAudio = document.getElementById('home_audio');
+            homeAudio.volume = volume;
+        }
+
+        // Evento para iniciar o jogo
+        document.getElementById('start_btn').addEventListener('click', function() {
+            var videoContainer = document.getElementById('video-container-start');
+            var video = document.getElementById('video-start');
+            videoContainer.style.display = 'flex';
+            adjustMusicVolume(0); // Mute music
+            video.play();
+            video.addEventListener('ended', function() {
+                videoContainer.style.display = 'none';
+                adjustMusicVolume(1); // Restore music volume
             });
-        </script>
-	</body>
+        });
+
+        // Evento para exibir ajuda
+        document.getElementById('help_btn').addEventListener('click', function() {
+            var videoContainer = document.getElementById('video-container-help');
+            var video = document.getElementById('video-help');
+            videoContainer.style.display = 'flex';
+            adjustMusicVolume(0); // Mute music
+            video.play();
+            video.addEventListener('ended', function() {
+                videoContainer.style.display = 'none';
+                adjustMusicVolume(1); // Restore music volume
+            });
+        });
+    </script>
+</body>
 </html>

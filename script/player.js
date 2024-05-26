@@ -14,19 +14,19 @@ function Player(data) {
 	this.rope_speed = data.rope_speed;
 	this.jump_speed = data.jump_speed;
 
-	// 与地图碰撞的矩形
+	// 
 	this.map_rect = new Rect(this.x + this.width / 3, this.y + this.height, this.width / 3, data.rect_height);
 	this.rect = new Rect(this.x, this.y, this.width, this.height);
 
-	// 动画
+	// 
 	this.stand_animation = data.stand_animation;
 	this.rope_animation = data.rope_animation;
 	this.ladder_animation = data.ladder_animation;
 	this.walk_animation = data.walk_animation;
 	this.jump_animation = data.jump_animation;
-	this.curr_res = data.curr_res; // 当前绘制的图片
+	this.curr_res = data.curr_res; // 
 
-	// 当前角色状态判断
+	
 	this.is_right = data.is_right; // face right
 	this.is_stand = true;
 	this.is_walk = false;

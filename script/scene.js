@@ -132,7 +132,6 @@ function GameScene(scene_obj, ctx) {
 				if (this.player.is_skill) return;
 				this.backpack.addHp(); // Adiciona vida (ou outra ação relacionada à poção)
 				break;
-			
 		}
 	}
 	
@@ -151,6 +150,9 @@ function GameScene(scene_obj, ctx) {
 				break;
 			case 40: // Tecla de seta para baixo
 				this.player.is_down = false;
+				break;
+			case 90: // Tecla "Z"
+				this.player.is_thing = false; // Define que o jogador parou de interagir com um item
 				break;
 		}
 	}

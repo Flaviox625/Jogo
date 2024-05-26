@@ -26,8 +26,8 @@ function MonsterFactory() {
 		switch(data.name) {
 			case "Caracol azul":
 				return new NormalMonster(this.createNormalMonsterData(data.ax, data.ay, data.awidth, window.resource.lanwoniu, data.name,
-										500, 900, 900, 900));
-			case "Mini cogu":
+					500, 900, 900, 900));
+					case "Mini cogu":
 				return new NormalMonster(this.createNormalMonsterData(data.ax, data.ay, data.awidth, window.resource.moguzai, data.name, 
 										500, 600, 600, 600));
 			case "Cogumelo espinhoso":
@@ -103,34 +103,34 @@ function MonsterFactory() {
 		switch(data.name) {
 			case "Pixil estelar":
 				return new SkillAttackMonster(this.createSkillAttackMonsterData(data.ax, data.ay, data.awidth, window.resource.xingguangjingling, data.name,
-										500, 
-										900, 
-										900, 
-										900, 
-										1500, 6,
-										1000, 
-										400, 
-										200, 200));
+										 500, 
+										 900, 
+										 900, 
+										 900, 
+										 1500, 6,
+										 1000, 
+										 400, 
+										 200, 200));
 			case "Pixil lunar":
 				return new SkillAttackMonster(this.createSkillAttackMonsterData(data.ax, data.ay, data.awidth, window.resource.yueguangjingling, data.name,
-										500, 
-										900, 
-										900, 
-										900, 
-										1500, 6,
-										1000, 
-										400, 
-										250, 200));
+										 500, 
+										 900, 
+										 900, 
+										 900, 
+										 1500, 6,
+										 1000, 
+										 400, 
+										 250, 200));
 			case "Pixil solar":
 				return new SkillAttackMonster(this.createSkillAttackMonsterData(data.ax, data.ay, data.awidth, window.resource.riguangjingling, data.name,
-										500, 
-										900, 
-										900, 
-										900, 
-										1500, 6,
-										1000, 
-										400, 
-										250, 200));
+										 500, 
+										 900, 
+										 900, 
+										 900, 
+										 1500, 6,
+										 1000, 
+										 400, 
+										 250, 200));
 		}
 	}
 }

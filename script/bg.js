@@ -47,7 +47,7 @@ function UI() {
 				this.tip = this.createTip(1, "[Autor] Este jogo é apenas para teste.");
 				break;
 			case 4:
-				this.tip = this.createTip(1, "[Autor]QQ1439080086.");
+				this.tip = this.createTip(1, "[Autor]Existem bugs.");
 				break;
 			case 5:
 				this.tip = this.createTip(0, "[Ajuda] Depois de matar monstros, há uma certa probabilidade de obter equipamentos, que podem melhorar os atributos do personagem.")

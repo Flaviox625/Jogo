@@ -350,7 +350,7 @@ function Resource() {
 	this.loadFont = function() {
 		var parent = this;
 		var font = new FontFace("Arial", "url(font/SedanSC-Regular.ttf)", {});
-			font.load().then(function (loadedFace) {
+		font.load().then(function (loadedFace) {
 			document.fonts.add(loadedFace);
 			document.body.style.fontFamily = "Arial,";
 			parent.curr_amount++;
